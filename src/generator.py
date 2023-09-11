@@ -10,3 +10,5 @@ maze = Maze(userSize)
 maze.generate_maze()
 maze.print()
 print("Welcome to 2D maze")
+
+# new line
