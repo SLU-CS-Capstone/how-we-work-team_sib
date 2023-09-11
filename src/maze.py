@@ -1,10 +1,11 @@
 from graph import Graph
 
 class Maze:
-    def __init__(self, size):
-        self.size = size
+    def __init__(self, sizen, sizem):
+        self.sizen = sizen
+        self.sizem = sizem
         self.nodes = []
-        self.graph = Graph(size*size)
+        self.graph = Graph(sizen*sizem)
 
         # label the nodes from 0 to (N*N)-1
         for i in range(0, self.size):
