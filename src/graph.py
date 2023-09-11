@@ -23,7 +23,8 @@ class Graph:
                 result = True
         return result
 
-    def get_spanning_tree(self, start):
+    def get_spanning_tree(self, start, seed=None):
+        random.seed(seed)
         spanning_tree = Graph(self.num_nodes)
         stack = []
         visited = [False]*self.num_nodes
@@ -46,4 +47,3 @@ class Graph:
                 stack.pop()
 
         return spanning_tree
-
