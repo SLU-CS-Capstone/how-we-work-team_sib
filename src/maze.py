@@ -1,20 +1,21 @@
 from graph import Graph
 
 class Maze:
-    def __init__(self, size):
-        self.size = size
+    def __init__(self, sizen, sizem):
+        self.sizen = sizen
+        self.sizem = sizem
         self.nodes = []
-        self.graph = Graph(size*size)
+        self.graph = Graph(sizen*sizem)
 
         # label the nodes from 0 to (N*N)-1
-        for i in range(0, self.size):
+        for i in range(0, self.sizen):
             self.nodes.append([])
-            for j in range(0, self.size):
-                self.nodes[i].append(i*self.size + j)
+            for j in range(0, self.sizem):
+                self.nodes[i].append(i*self.sizen*self.sizem + j)
 
         # each node in the graph is connected to UP, DOWN, LEFT, RIGHT (if they exist)
-        for i in range(0, self.size):
-            for j in range(0, self.size):
+        for i in range(0, self.sizen):
+            for j in range(0, self.sizem):
                 node = self.nodes[i][j]
                 if i > 0:
                     up = self.nodes[i-1][j]
